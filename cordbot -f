@@ -1,0 +1,14 @@
+[0;1;32m●[0m discordbot.service - Discord Minecraft Bot
+     Loaded: loaded (]8;;file://minecraft/etc/systemd/system/discordbot.service/etc/systemd/system/discordbot.service]8;;; [0;1;32menabled[0m; preset: [0;1;38;5;185mdisabled[0m)
+     Active: [0;1;32mactive (running)[0m since Mon 2026-07-06 07:10:11 GMT; 9s ago
+   Main PID: 139983 (python)
+      Tasks: 3 (limit: 43525)
+     Memory: 29.8M (peak: 29.8M)
+        CPU: 338ms
+     CGroup: /system.slice/discordbot.service
+             └─[0;38;5;245m139983 /home/opc/discordBOT/venv/bin/python /home/opc/discordBOT/bot.py[0m
+
+Jul 06 07:10:11 minecraft systemd[1]: Started Discord Minecraft Bot.
+Jul 06 07:10:12 minecraft python[139983]: [2026-07-06 07:10:12] [WARNING ] discord.ext.commands.bot: Privileged message content intent is missing, commands may not work as expected.
+Jul 06 07:10:12 minecraft python[139983]: [2026-07-06 07:10:12] [INFO    ] discord.client: logging in using static token
+Jul 06 07:10:13 minecraft python[139983]: [2026-07-06 07:10:13] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 17ce290232e1056b330fecbe7d7cc0bd).
