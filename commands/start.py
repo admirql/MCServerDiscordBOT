@@ -1,4 +1,7 @@
 import discord
+
+import config
+
 from discord import app_commands
 
 from utils.mc import systemctl
@@ -23,10 +26,10 @@ async def start(interaction: discord.Interaction):
         )
         return
 
-    if await wait_for_rcon():
-        await interaction.followup.send(
-            "🟢 Minecraftサーバーの起動が完了しました！"
-        )
+    channel = interaction.client.get_channel(config.LOG_CHANNEL_ID)
+
+    if  channel:
+        await channel.send("🟢 Minecraftサーバーが起動しました。")
     else:
         await interaction.followup.send(
             "⚠️ 起動しましたがRCONへ接続できません。"

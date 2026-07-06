@@ -1,4 +1,5 @@
 import discord
+import config
 from discord import app_commands
 
 from utils.mc import systemctl
@@ -39,6 +40,7 @@ async def stop(interaction: discord.Interaction):
         )
         return
 
-    await interaction.followup.send(
-        "✅ バックアップ後、サーバーを停止しました。"
-    )
+    channel = interaction.client.get_channel(config.LOG_CHANNEL_ID)
+
+    if channel:
+        await channel.send("🔴 Minecraftサーバーが停止しました。")

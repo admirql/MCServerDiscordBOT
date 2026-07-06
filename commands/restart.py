@@ -1,4 +1,5 @@
 import discord
+import config
 from discord import app_commands
 
 from utils.mc import systemctl
@@ -40,10 +41,10 @@ async def restart(interaction: discord.Interaction):
         )
         return
 
-    if await wait_for_rcon():
-        await interaction.followup.send(
-            "🟢 バックアップ後、Minecraftサーバーの再起動が完了しました！"
-        )
+    channel = interaction.client.get_channel(config.LOG_CHANNEL_ID)
+
+    if channel:
+        await channel.send("🔴 Minecraftサーバーが停止しました。")
     else:
         await interaction.followup.send(
             "⚠️ 再起動しましたがRCONへ接続できません。"
